@@ -8,24 +8,13 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import utils.CommonMethods;
 
 import java.util.concurrent.TimeUnit;
 
-public class SoftAssertion {
-    WebDriver driver;
+public class SoftAssertion extends CommonMethods {
 
-    //pre condition @before method --lunch browser and navigate url
-
-    @BeforeMethod(alwaysRun = true)
-    public void openBrowserAndLunchApplication() {
-        System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("http://hrm.syntaxtechs.net/humanresources/symfony/web/index.php/login");
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
-    }
-    @Test
+    @Test(groups = "regression")
     public void verifyAndValidateSoftAssertions(){
         SoftAssert soft=new SoftAssert();
 
@@ -43,8 +32,5 @@ public class SoftAssertion {
         soft.assertAll();//should be the last line test case
     }
     //post condition @after method -- close browser
-    @AfterMethod
-    public void closeBrowser() {
-        driver.quit();
-    }
+
 }

@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-
-    <listeners>
-        <listener class-name="class3.ListenersClass"/>
-    </listeners>
-    <test verbose="2" preserve-order="true" name="Regression">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/Amran/eclipse-workspace/TestNgBasicsBatch11/src/class2/BeforeSuitAndBeforeTest.java">
         <groups>
             <run>
                 <include name="regression"/>
             </run>
         </groups>
-        <classes>
-            <class name="class3.Paralleltest"/>
-        </classes>
-
+        <packages>
+            <package name="class3"/>
+        </packages>
     </test>
 </suite>
